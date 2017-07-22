@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/action': {
-        target: 'http://decorate.familyku.com',
+        target: 'http://zxapi.familyku.com',
         changeOrigin: true,
         pathRewrite: {
           '^/action': ''

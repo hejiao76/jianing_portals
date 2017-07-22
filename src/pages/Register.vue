@@ -15,13 +15,13 @@
           <div class="form-group">
             <label for="inputPassword1" class="col-sm-2 control-label">密码:</label>
             <div class="col-sm-10">
-              <input name="password" v-model="password" type="password" class="form-control" id="inputPassword1" placeholder="密码">
+              <input name="password" v-model="password1" type="password" class="form-control" id="inputPassword1" placeholder="密码">
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword2" class="col-sm-2 control-label">确认密码:</label>
             <div class="col-sm-10">
-              <input name="repassword" v-model="repassword" type="password" class="form-control" id="inputPassword2" placeholder="确认密码">
+              <input name="repassword" v-model="password2" type="password" class="form-control" id="inputPassword2" placeholder="确认密码">
             </div>
           </div>
           <div class="form-group">
@@ -33,20 +33,20 @@
           <div class="form-group">
             <label for="usernum" class="col-sm-2 control-label">身份证号:</label>
             <div class="col-sm-10">
-              <input v-model="idcode" type="number" class="form-control" id="usernum" placeholder="身份证号">
+              <input v-model="idcard" type="number" class="form-control" id="usernum" placeholder="身份证号">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">所在区域:</label>
             <div class="col-sm-5">
-              <select  v-model="province" class="form-control">
+              <select  v-model="provinceid" class="form-control">
                 <option value="1">北京</option>
                 <option value="2">成都</option>
                 <option value="3">上海</option>
               </select>
             </div>
             <div class="col-sm-5">
-              <select v-model="city" class="form-control">
+              <select v-model="cityid" class="form-control">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -56,13 +56,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">出身工种:</label>
             <div class="col-sm-10">
-              <input v-model="jobtype" type="number" class="form-control" placeholder="出身工种">
+              <input v-model="worktype" type="number" class="form-control" placeholder="出身工种">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">从业年限:</label>
             <div class="col-sm-10">
-              <select v-model="jobyear" class="form-control">
+              <select v-model="workyear" class="form-control">
                 <option value="1">1年之内</option>
                 <option value="2">1-3年</option>
                 <option value="3">3-5年</option>
@@ -74,13 +74,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">QQ号码:</label>
             <div class="col-sm-10">
-              <input v-model="qqnum" type="number" class="form-control" placeholder="QQ号码">
+              <input v-model="qqnumber" type="number" class="form-control" placeholder="QQ号码">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">售后服务:</label>
             <div class="col-sm-10">
-              <input v-model="service" type="number" class="form-control" placeholder="售后服务">
+              <input v-model="salesservice" type="number" class="form-control" placeholder="售后服务">
             </div>
           </div>
           <div class="form-group">
@@ -112,17 +112,16 @@ export default {
   data() {
     return {
       username: '',
-      password: '',
-      repassword:'',
+      password1: '',
+      password2:'',
       realname:'',
-      idcode:'',
-      province:'',
-      city:'',
-      jobtype:'',
-      jobyear:'',
-      qqnum:'',
-      service:'',
-      verificode: '',
+      idcard:'',
+      provinceid:'',
+      cityid:'',
+      worktype:'',
+      workyear:'',
+      qqnumber:'',
+      salesservice:'',
       xycheck:'',
       sendCode: false,
       timeOut: 60
@@ -170,15 +169,16 @@ export default {
     },
     regist () {
         alert("1111");
-        debugger;
+       // debugger;
         let telphoneReg = /^1[34578]\d{9}$/;
-        if(telphoneReg.test(this.username)){
-            alert("手机号输入不正确");
-        }
-      if (!this.username || !this.password || !this.verificode) {
-        _.alert('请填写完整')
-        return
-      }
+//        if(telphoneReg.test(this.username)){
+//            alert("手机号输入不正确");
+//        }
+
+//      if (!this.username || !this.password || !this.verificode) {
+//        _.alert('请填写完整')
+//        return
+//      }
       // if (!('/^1[34578]\d{9}$/').test(this.username)) {
       //     alert('请输入有效手机号')
       //     return
@@ -188,12 +188,24 @@ export default {
       //     return;
       // }
       let data = {
-        tellphone: this.username,
-        password: this.password,
-        verificode: this.verificode
+        username: this.username,
+        password1: this.password1,
+        password2: this.password2,
+        realname:this.realname,
+        idcard:this.idcard,
+        provinceid:this.provinceid,
+        provincename:this.provincename || "sssss",
+        cityid:this.cityid,
+        cityname:this.cityname || "ssss",
+        areaid:this.areaid || "111",
+        areaname:this.areaname || "111",
+        worktype:this.worktype,
+        workyear:this.workyear,
+        qqnumber:this.qqnumber,
+        salesservice:this.salesservice
       }
-      this.$store.dispatch('setLoadingState', true)
-      api.Regist(data)
+      //this.$store.dispatch('setLoadingState', true)
+      api.Register(data)
         .then(res => {
           if(res.success) {
             // let userInfo = Object.assign()

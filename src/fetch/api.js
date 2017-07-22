@@ -50,7 +50,7 @@ export default {
      * 用户登录
      */
     Login(params) {
-        return fetch('/back/user/login', params)
+        return fetch('/api/user/login', params)
     },
 
     /**
@@ -58,6 +58,9 @@ export default {
      */
     Regist(params) {
         return fetch('/users/api/userRegist', params)
+    },
+    Register(params) {
+      return fetch('/api/user/register',params)
     },
 
     /**
