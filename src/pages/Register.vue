@@ -40,17 +40,16 @@
             <label class="col-sm-2 control-label">所在区域:</label>
             <div class="col-sm-5">
               <select  v-model="province" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-
+                <option value="1">北京</option>
+                <option value="2">成都</option>
+                <option value="3">上海</option>
               </select>
             </div>
             <div class="col-sm-5">
               <select v-model="city" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
           </div>
@@ -64,10 +63,11 @@
             <label class="col-sm-2 control-label">从业年限:</label>
             <div class="col-sm-10">
               <select v-model="jobyear" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-
+                <option value="1">1年之内</option>
+                <option value="2">1-3年</option>
+                <option value="3">3-5年</option>
+                <option value="4">5-10年</option>
+                <option value="5">10年以上</option>
               </select>
             </div>
           </div>
@@ -106,6 +106,7 @@ import { mapActions } from 'vuex'
 import api from '../fetch/api'
 import * as _ from '../util/tool'
 import header from "../components/header.vue"
+import util from "../util/util"
 
 export default {
   data() {
@@ -169,6 +170,11 @@ export default {
     },
     regist () {
         alert("1111");
+        debugger;
+        let telphoneReg = /^1[34578]\d{9}$/;
+        if(telphoneReg.test(this.username)){
+            alert("手机号输入不正确");
+        }
       if (!this.username || !this.password || !this.verificode) {
         _.alert('请填写完整')
         return
@@ -206,6 +212,6 @@ export default {
 <style>
   /*@import "../assets/c/global.css";*/
   /*@import "https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css";*/
-  @import "../assets/c/bootstrap/dist/css/bootstrap.min.css";
+  @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
   @import "../assets/c/register.css";
 </style>
