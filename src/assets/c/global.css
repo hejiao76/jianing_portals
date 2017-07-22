@@ -3,7 +3,7 @@ a,
 body {
   color: #221814;
   text-decoration: none; }
-
+.global_box a { color: #333333;}
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -190,13 +190,17 @@ body {
           background: #57a126;
           color: #FFFFFF; }
 .btn {  height: 36px; cursor: pointer; border-radius: 5px; font-size: 16px; line-height: 36px; color: #ffffff; text-align: center; margin: 0 auto; width: 160px; background: #57a126;}
-
+.btn.focus, .btn:focus, .btn:hover {
+  color: #FFFFFF !important;
+  background: #457D20;
+  text-decoration: none;
+}
 /*# sourceMappingURL=global.css.map */
 .footer_box {
 
 }
 .global_box>.center_box { min-height: 400px;}
-.herf_box { height: 39px; line-height: 39px; background: #e6e8e4; clear: both;}
+.herf_box { height: 39px; line-height: 39px; background: #e6e8e4; clear:both; }
 .Breadcrumbs {font-size: 16px; margin: 25px 0 20px 0;}
 .Breadcrumbs>span {  margin: 0 10px;}
 .Breadcrumbs a.active { color: #57a126;}
