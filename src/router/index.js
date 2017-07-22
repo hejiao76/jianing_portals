@@ -15,7 +15,11 @@ import Post from '../pages/Post'
 import UserMsg from '../pages/UserMsg'
 import Navbar from '../pages/Navbar'
 import NotFound from '../pages/NotFound'
-import GZInfo from '../pages/gzInfo.vue'
+import GZInfo from '../pages/GZ_info.vue'
+import GZInfoEdit from '../pages/GZ_info_edit.vue'
+import GZArticleList from '../pages/GZ_article_list.vue'
+import GZResetPwd from '../pages/GZ_reset_pwd.vue'
+import GZYuYueList from '../pages/GZ_yuyue_list.vue'
 
 Vue.use(Router)
 
@@ -72,6 +76,22 @@ export default new Router({
     {
       path: '/user/gzInfo',
       component:GZInfo
+    },
+    {
+      path: '/user/gzInfoEdit',
+      component:GZInfoEdit
+    },
+    {
+      path: '/user/gzRePwd',
+      component:GZResetPwd
+    },
+    {
+      path: '/user/gzArtList',
+      component:GZArticleList
+    },
+    {
+      path: '/user/gzYuYue',
+      component:GZYuYueList
     },
 		{
 			path: '/user/info',
