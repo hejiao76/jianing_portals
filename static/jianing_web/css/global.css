@@ -193,8 +193,9 @@ body {
 
 /*# sourceMappingURL=global.css.map */
 .footer_box {
-	
+
 }
+.global_box>.center_box { min-height: 400px;}
 .herf_box { height: 39px; line-height: 39px; background: #e6e8e4;}
 .Breadcrumbs {font-size: 16px; margin: 25px 0 20px 0;}
 .Breadcrumbs>span {  margin: 0 10px;}
