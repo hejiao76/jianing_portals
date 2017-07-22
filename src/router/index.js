@@ -15,6 +15,7 @@ import Post from '../pages/Post'
 import UserMsg from '../pages/UserMsg'
 import Navbar from '../pages/Navbar'
 import NotFound from '../pages/NotFound'
+import GZInfo from '../pages/gzInfo.vue'
 
 Vue.use(Router)
 
@@ -67,6 +68,10 @@ export default new Router({
     {
       path: '/user/register',
       component: Register
+    },
+    {
+      path: '/user/gzInfo',
+      component:GZInfo
     },
 		{
 			path: '/user/info',

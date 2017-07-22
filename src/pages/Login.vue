@@ -70,7 +70,7 @@ export default {
 
         // 用户登录
         _login() {
-            window.location.href="/static/test.html";
+            //window.location.href="/static/test.html";
             if (!this.username || !this.password) {
                 _.alert('请填写完整')
                 return
