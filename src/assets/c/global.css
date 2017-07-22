@@ -196,7 +196,7 @@ body {
 
 }
 .global_box>.center_box { min-height: 400px;}
-.herf_box { height: 39px; line-height: 39px; background: #e6e8e4;}
+.herf_box { height: 39px; line-height: 39px; background: #e6e8e4; clear: both;}
 .Breadcrumbs {font-size: 16px; margin: 25px 0 20px 0;}
 .Breadcrumbs>span {  margin: 0 10px;}
 .Breadcrumbs a.active { color: #57a126;}
