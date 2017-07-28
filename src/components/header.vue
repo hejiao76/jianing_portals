@@ -8,7 +8,7 @@
   <div class="global_box_top">
     <div class="nav_top" style="background: #57a126; color: #FFFFFF;">
       <div class="center_box">
-        您好，欢迎来到家宁装修网
+        您好<a href="javascript:;" v-on:click="gzInfo">牟元狗</a>，欢迎来到家宁装修网
         <div class="where_box"><span class="iconfont icon-location"></span><span id="city">北京</span><span>【更换】</span></div>
         <ul class="nav_right">
           <a>
@@ -51,11 +51,15 @@
       },
       gzreg () {
         alert("工长入驻");
-        this.$router.replace("/register");
+        this.$router.replace("/user/register");
       },
       gzlogin () {
         alert("工长登录");
-        this.$router.replace("/login");
+        this.$router.replace("/user/login");
+      },
+      gzInfo () {
+          alert("工长个人信息")
+          this.$router.replace("/user/gzInfoEdit")
       },
       bjgz () {
          alert("北京工装");
