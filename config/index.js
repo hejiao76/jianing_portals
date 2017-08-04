@@ -28,11 +28,20 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/action': {
-        target: 'http://zxapi.familyku.com',
+      // '/action' : 'http://zxapi.familyku.com',
+      // '/action1' : 'http://upload.familyku.com'
+      // '/action': {
+      //   target: 'http://zxapi.familyku.com',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/action': '/action'
+      //   }
+      // },
+      '/action1' : {
+        target: 'http://upload.familyku.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/action': ''
+          '^/action1': ''
         }
       }
     },

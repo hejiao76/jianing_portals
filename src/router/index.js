@@ -18,6 +18,7 @@ import NotFound from '../pages/NotFound'
 import GZInfo from '../pages/GZ_info.vue'
 import GZInfoEdit from '../pages/GZ_info_edit.vue'
 import GZArticleList from '../pages/GZ_article_list.vue'
+import GZArticleAdd from '../pages/GZ_article_add.vue'
 import GZResetPwd from '../pages/GZ_reset_pwd.vue'
 import GZYuYueList from '../pages/GZ_yuyue_list.vue'
 
@@ -88,6 +89,10 @@ export default new Router({
     {
       path: '/user/gzArtList',
       component:GZArticleList
+    },
+    {
+      path: '/user/gzArtAdd',
+      component:GZArticleAdd
     },
     {
       path: '/user/gzYuYue',

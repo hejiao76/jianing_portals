@@ -79,18 +79,24 @@ export default {
                 username: this.username,
                 password: this.password
             }
-            this.$store.dispatch('setLoadingState', true)
+//            this.$store.dispatch('setLoadingState', true)
             api.Login(data)
                 .then(res => {
-                    console.log(res)
-                    if(res.success) {
-                        // let userInfo = Object.assign()
-                        this.$store.dispatch('setLoadingState', false)
-                        this.setUserInfo(res.data)
-                        this.$router.replace('/home')
+                    if(res.code == 200) {
+                        // let userInfo = Object.assign();
+                        localStorage.setItem("userid",res.userid);
+                        localStorage.setItem("token",res.token);
+                        localStorage.setItem("username",res.username);
+//                        this.$store.dispatch('setLoadingState', false)
+//                        this.setUserInfo(res.data)
+                        this.$router.replace('/user/gzInfoEdit');
+                    }else {
+                        alert(res.msg);
+                        console.log(res.code);
                     }
                 })
                 .catch(error => {
+                    debugger;
                     console.log(error)
                 })
         }
