@@ -21,6 +21,8 @@ import GZArticleList from '../pages/GZ_article_list.vue'
 import GZArticleAdd from '../pages/GZ_article_add.vue'
 import GZResetPwd from '../pages/GZ_reset_pwd.vue'
 import GZYuYueList from '../pages/GZ_yuyue_list.vue'
+import PGZArticleList from '../pages/P_GZ_article_list.vue'
+import PGZGZList from '../pages/P_GZ_gz_list.vue'
 
 Vue.use(Router)
 
@@ -97,6 +99,14 @@ export default new Router({
     {
       path: '/user/gzYuYue',
       component:GZYuYueList
+    },
+    {
+      path: '/pgz_article',
+      component:PGZArticleList
+    },
+    {
+      path: '/pgz_gzlist',
+      component:PGZGZList
     },
 		{
 			path: '/user/info',

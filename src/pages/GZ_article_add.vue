@@ -1,7 +1,9 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
     <!--公用顶部end-->
+    </div>
     <div class="idecoration_list_details_box center_box">
       <div class="Breadcrumbs">
         <a href="index.html">首页</a><span class="iconfont icon-jikediancanicon13"></span><a href="decoration_list_details.html" class="active">修改个人信息</a>

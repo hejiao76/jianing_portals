@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
-    <v-header></v-header>
+    <div class="global_box_top">
+      <v-header></v-header>
+    </div>
     <!--<div class="global_box_top">-->
       <!--<div class="nav_top" style="background: #57a126; color: #FFFFFF;">-->
         <!--<div class="center_box">-->
@@ -103,9 +105,13 @@ export default {
     }
 }
 </script>
-<style>
-  @import "../assets/c/global.css";
-  @import "../assets/c/login.css";
+<style src="../assets/c/global.css" scoped ></style>
+<style src="../assets/c/login.css" scoped ></style>
+<!--<style src="https://at.alicdn.com/t/font_adkaonfr6xvquxr.css" scoped ></style>-->
+
+<style scoped>
+  /*@import "../assets/c/global.css";*/
+  /*@import "../assets/c/login.css";*/
   @import "https://at.alicdn.com/t/font_adkaonfr6xvquxr.css";
 </style>
 <!--<style lang="scss" scoped>-->

@@ -5,40 +5,35 @@
     <!--<div class="header-icon" v-show="menuDisplay" @click="showBar"><i class="icon">&#xe634;</i></div>-->
     <!--<div class="header-icon" v-show="mapDisplay" @click="getMap"><i class="icon map-icon">&#xe600;</i></div>-->
   <!--</div>-->
-
-    <div class="nav_top" style="background: #57a126; color: #FFFFFF;">
-      <div class="center_box">
-        您好<a href="javascript:;" v-on:click="gzInfo">牟元狗</a>，欢迎来到家宁装修网
-        <div class="where_box"><span class="iconfont icon-location"></span><span id="city">北京</span><span>【更换】</span></div>
-        <ul class="nav_right">
-          <a>
-            <li v-on:click="showWxImg">官方微信 </li>
-          </a>
-          <a>
-            <li v-on:click="gzreg">工长入驻</li>
-          </a>
-          <a>
-            <li v-on:click="gzlogin">工长登录</li>
-          </a>
-          <a>
-            <li v-on:click="bjgz">北京工装</li>
-          </a>
-          <a>
-            <li v-on:click="bjjz">北京家装</li>
-          </a>
-        </ul>
-      </div>
-    </div>
-
+  <div class="center_box nav_center">
+    <img src="../assets/img/logo.png" />
+    <ul class="nav_title">
+      <a href="javascript:" v-bind:class="{active : 0===menuTag}">
+        <li>首页</li>
+      </a>
+      <a href="javascript:" v-bind:class="{active : 1===menuTag}">
+        <li>找工长</li>
+      </a>
+      <a href="javascript:" v-bind:class="{active : 2===menuTag}">
+        <li>装修案列</li>
+      </a>
+      <a href="javascript:" v-bind:class="{active : 3===menuTag}">
+        <li>装修建材库</li>
+      </a>
+      <a href="javascript:" v-bind:class="{active : 4===menuTag}">
+        <li>装修那点事</li>
+      </a>
+      <a href="javascript:" v-bind:class="{active : 5===menuTag}">
+        <li>关于我们</li>
+      </a>
+    </ul>
+  </div>
 </template>
 
 <script>
   export default {
     props: {
-      title: String,
-      menuDisplay: Boolean,
-      backDisplay: Boolean,
-      mapDisplay: Boolean
+      menuTag:0
     },
     data() {
       return {

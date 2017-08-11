@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
+    </div>
     <!--公用顶部end-->
     <div class="idecoration_list_details_box center_box">
       <div class="Breadcrumbs">
@@ -105,7 +107,9 @@
     }
   }
 </script>
-<style>
-  @import "../assets/c/global.css";
-  @import "../assets/c/change_mesg.css";
-</style>
+<style src="../assets/c/global.css" scoped ></style>
+<style src="../assets/c/change_mesg.css" scoped ></style>
+<!--<style>-->
+  <!--@import "../assets/c/global.css";-->
+  <!--@import "../assets/c/change_mesg.css";-->
+<!--</style>-->
