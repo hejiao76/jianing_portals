@@ -23,6 +23,7 @@ import GZResetPwd from '../pages/GZ_reset_pwd.vue'
 import GZYuYueList from '../pages/GZ_yuyue_list.vue'
 import PGZArticleList from '../pages/P_GZ_article_list.vue'
 import PGZGZList from '../pages/P_GZ_gz_list.vue'
+import PGZCaiLiaoList from '../pages/P_GZ_jiancai_list.vue'
 
 Vue.use(Router)
 
@@ -107,6 +108,10 @@ export default new Router({
     {
       path: '/pgz_gzlist',
       component:PGZGZList
+    },
+    {
+      path: '/pgz_cailiaolist',
+      component:PGZCaiLiaoList
     },
 		{
 			path: '/user/info',
