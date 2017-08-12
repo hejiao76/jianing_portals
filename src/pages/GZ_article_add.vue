@@ -36,8 +36,8 @@
               </el-form-item>
               <el-form-item label="类型">
                 <el-radio-group v-model="form.type">
-                  <el-radio label="家装"></el-radio>
-                  <el-radio label="工装"></el-radio>
+                  <el-radio value="1" label="1">家装</el-radio>
+                  <el-radio value="2" label="2">工装</el-radio>
                 </el-radio-group>
               </el-form-item>
               <el-form-item label="小区名称">
@@ -129,7 +129,15 @@ export default {
       saveArt () {
           var param= _.getCommonParam();
           param = Object.assign(param,this.form);
-          param.detail=this.getUEContent();
+          param.details=this.getUEContent();
+          param.provincename="1";
+          param.provinceid=1;
+          param.cityid=1;
+          param.cityname=1;
+          param.areaid=1;
+          param.areaname=1;
+          debugger;
+          console.log(param.toString());
           console.log(param);
           api.saveArticle(param).then(res => {
               if(res.code == 200) {

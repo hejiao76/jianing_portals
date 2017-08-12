@@ -42,9 +42,9 @@
                 <!--</tr>-->
               <!--</table>-->
               <el-table :data="tableData" stripe style="width: 100%">
-                <el-table-column prop="date" label="标题" ></el-table-column>
-                <el-table-column prop="name" label="小区名称"></el-table-column>
-                <el-table-column prop="address" label="发布时间"></el-table-column>
+                <el-table-column prop="title" label="标题" ></el-table-column>
+                <el-table-column prop="community" label="小区名称"></el-table-column>
+                <el-table-column prop="createtime" label="发布时间"></el-table-column>
                 <el-table-column label="操作">
                   <template scope="scope">
                     <el-button  type="text" size="small">查看</el-button>
@@ -94,6 +94,7 @@ export default {
         let param = _.getCommonParam();
         api.getArticleList(param).then(res => {
             if(res.code==200){
+                debugger;
               this.tableData=res.data.result;
             }
         }).catch(error => {

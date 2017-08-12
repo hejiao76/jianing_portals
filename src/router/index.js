@@ -24,6 +24,7 @@ import GZYuYueList from '../pages/GZ_yuyue_list.vue'
 import PGZArticleList from '../pages/P_GZ_article_list.vue'
 import PGZGZList from '../pages/P_GZ_gz_list.vue'
 import PGZCaiLiaoList from '../pages/P_GZ_jiancai_list.vue'
+import PGZThingsList from '../pages/P_GZ_things_list.vue'
 
 Vue.use(Router)
 
@@ -113,6 +114,11 @@ export default new Router({
       path: '/pgz_cailiaolist',
       component:PGZCaiLiaoList
     },
+    {
+      path: '/pgz_thingslist',
+      component:PGZThingsList
+    },
+
 		{
 			path: '/user/info',
 			component: UserInfo
