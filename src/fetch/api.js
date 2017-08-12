@@ -181,6 +181,38 @@ export default {
      */
     saveArticle (param) {
       return fetch("/api/user/saveDecorateCase", param);
+    },
+    /**
+     * 前端装修案例列表
+     * @param param
+     * @returns {*}
+     */
+    decorateCaseList (param) {
+      return fetch("/api/decoratecase/decorateCaseList", param);
+    },
+    /**
+     * 前端工长列表
+     * @param param
+     * @returns {*}
+     */
+    foremanList (param) {
+      return fetch("/api/foreman/foremanList", param);
+    },
+    /**
+     * 前端材料列表
+     * @param param
+     * @returns {*}
+     */
+    decorateCaiLiaoList (param) {
+      return fetch("/api/decoratenew/decorateNewList", param);
+    },
+    /**
+     * 前端装修那点事列表
+     * @param param
+     * @returns {*}
+     */
+    decorateThingsList (param) {
+      return fetch("/api/decoratenew/decorateNewList", param);
     }
 
 

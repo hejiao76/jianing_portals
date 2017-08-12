@@ -149,7 +149,21 @@
           }
       },
       requestArtList () {
-        let param=_.getCommonParam();
+        let param={
+            common:{
+                pageNo:1,
+                pageSize:1
+            }
+        }
+        api.decorateCaseList(param).then(res => {
+          if(res.code==200){
+            //debugger;
+            this.artData=res.data.result;
+          }
+        }).catch(error => {
+          console.log(error);
+        });
+        return;
         alert("发送请求");
         this.artData=[{
             title:"测试1",

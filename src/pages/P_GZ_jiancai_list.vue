@@ -2,7 +2,7 @@
   <div class="global_box">
     <div class="global_box_top">
       <v-header></v-header>
-      <v-header-nav v-bind:menuTag="1"></v-header-nav>
+      <v-header-nav v-bind:menuTag="3"></v-header-nav>
     </div>
     <div class="container material-list">
       <div class="row" >
@@ -96,7 +96,22 @@
           }
       },
       requestArtList () {
-        let param=_.getCommonParam();
+        let param={
+          common:{
+            pageNo:1,
+            pageSize:1
+          },
+          flag:1
+        }
+        api.decorateCaiLiaoList(param).then(res => {
+          if(res.code==200){
+            //debugger;
+            this.artData=res.data.result;
+          }
+        }).catch(error => {
+          console.log(error);
+        });
+        return;
         alert("发送请求");
         this.artData=[{
             title:"测试1",

@@ -36,7 +36,7 @@
         <div class="col-md-3 list-con" v-for="item in artData" v-on:click="toDetail(item)">
           <div class="img_box">
             <img class="bc_img" v-bind:src="item.img" />
-            <div class="foreman_name">{{item.title}}</div>
+            <div class="foreman_name">{{item.realname}}</div>
           </div>
           <div class="listbtn">免费预约</div>
 
@@ -105,7 +105,21 @@
           }
       },
       requestArtList () {
-        let param=_.getCommonParam();
+        let param={
+          common:{
+            pageNo:1,
+            pageSize:1
+          }
+        }
+        api.foremanList(param).then(res => {
+          if(res.code==200){
+            //debugger;
+            this.artData=res.data.result;
+          }
+        }).catch(error => {
+          console.log(error);
+        });
+        return;
         alert("发送请求");
         this.artData=[{
             title:"测试1",

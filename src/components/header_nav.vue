@@ -8,22 +8,22 @@
   <div class="center_box nav_center">
     <img src="../assets/img/logo.png" />
     <ul class="nav_title">
-      <a href="javascript:" v-bind:class="{active : 0===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(0)" v-bind:class="{active : 0===menuTag}">
         <li>首页</li>
       </a>
-      <a href="javascript:" v-bind:class="{active : 1===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(1)" v-bind:class="{active : 1===menuTag}">
         <li>找工长</li>
       </a>
-      <a href="javascript:" v-bind:class="{active : 2===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(2)" v-bind:class="{active : 2===menuTag}">
         <li>装修案列</li>
       </a>
-      <a href="javascript:" v-bind:class="{active : 3===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(3)" v-bind:class="{active : 3===menuTag}">
         <li>装修建材库</li>
       </a>
-      <a href="javascript:" v-bind:class="{active : 4===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(4)" v-bind:class="{active : 4===menuTag}">
         <li>装修那点事</li>
       </a>
-      <a href="javascript:" v-bind:class="{active : 5===menuTag}">
+      <a href="javascript:" v-on:click="changeMenu(5)" v-bind:class="{active : 5===menuTag}">
         <li>关于我们</li>
       </a>
     </ul>
@@ -41,6 +41,27 @@
       }
     },
     methods: {
+      changeMenu (param) {
+          switch (param){
+            case 0 :
+                window.location.href="index.html";
+                break;
+            case 1 :
+              this.$router.replace('/pgz_gzlist');
+              break;
+            case 2 :
+              this.$router.replace('/pgz_article');
+              break;
+              //window.location.href="index.html";
+            case 3 :
+              this.$router.replace('/pgz_cailiaolist');
+              break;
+            case 4 :
+              this.$router.replace('/pgz_thingslist');
+              break;
+          }
+        //this.$router.replace('/user/'+url);
+      },
       showWxImg () {
         alert("官方微信");
       },
