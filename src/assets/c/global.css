@@ -177,7 +177,8 @@ body {
       float: right;
       height: 47px;
       line-height: 47px;
-      margin-top: 13px; }
+      margin-top: 13px;
+      margin-bottom: 0 !important;}
       .global_box .nav_center .nav_title a {
         float: left;
         width: 100px;

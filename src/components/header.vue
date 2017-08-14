@@ -5,7 +5,7 @@
     <!--<div class="header-icon" v-show="menuDisplay" @click="showBar"><i class="icon">&#xe634;</i></div>-->
     <!--<div class="header-icon" v-show="mapDisplay" @click="getMap"><i class="icon map-icon">&#xe600;</i></div>-->
   <!--</div>-->
-  <div class="global_box_top">
+
     <div class="nav_top" style="background: #57a126; color: #FFFFFF;">
       <div class="center_box">
         您好<a href="javascript:;" v-on:click="gzInfo">牟元狗</a>，欢迎来到家宁装修网
@@ -29,7 +29,7 @@
         </ul>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script>

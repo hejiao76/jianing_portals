@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
+    </div>
     <!--公用顶部end-->
     <div class="idecoration_list_details_box center_box">
       <div class="Breadcrumbs">
@@ -32,65 +34,84 @@
               <form id="form1" action="" method="post">
                 <div class="form_list">
 										<span class="title_name">
-											身份证号:
+											手机号:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input name="name" class="change_input" type="text" v-bind:value="user.username"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
-											手机号:
+											身份证号:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input name="name" class="change_input" type="text" v-bind:value="user.idcard"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											真实姓名:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input name="name" class="change_input" type="text" v-bind:value="user.realname"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											QQ号码:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input name="name" class="change_input" type="text" v-bind:value="user.qqnumber"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											所在区域:
 										</span>
-                  <label>差个地区联动</label>
+
+                    <select  v-model="user.provinceid" class="form-control" style="width:20%;display: inline-block">
+                      <option value="1">北京</option>
+                      <option value="2">成都</option>
+                      <option value="3">上海</option>
+                    </select>
+
+                    <select v-model="user.cityid" class="form-control" style="width:20%;display: inline-block">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											出身工种:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="user.worktype" name="name" class="change_input" type="text"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											从业年限:
 										</span>
-                  <label><input name="name" class="change_input" type="text" data-easyform="null;" data-easytip="class:easy-blue;"  data-message="密码必须为6—16位"></label>
+                  <label>
+                    <select v-model="user.workyear" class="form-control">
+                    <option value="1">1年之内</option>
+                    <option value="2">1-3年</option>
+                    <option value="3">3-5年</option>
+                    <option value="4">5-10年</option>
+                    <option value="5">10年以上</option>
+                  </select></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											售后服务:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="user.salesservice" name="name" class="change_input" type="text"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											工作理念:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="user.intro" name="name" class="change_input" type="text"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											个人介绍:
 										</span>
-                  <label><textarea name="name" class="change_input" style="min-height: 200px; padding: 15px 0;"> </textarea> </label>
+                  <label><textarea v-model="user.info" name="name" class="change_input" style="min-height: 200px; padding: 15px 0;"> </textarea> </label>
                 </div>
-                <input value="注 册" type="submit" class="btn"  />
+                <input v-on:click="saveUserInfo" value="注 册" type="button" class="btn"  />
               </form>
             </div>
 
@@ -150,54 +171,87 @@
 <script>
   import { mapActions } from 'vuex'
   import api from '../fetch/api'
-  import * as _ from '../util/tool'
+//  import * as _ from '../util/tool'
   import header from "../components/header.vue"
+  import * as _ from '../util/util'
 
   export default {
     data() {
       return {
-        username: '',
-        password: ''
+          user:{},
+//        username: '',
+//        password: ''
       }
     },
     components:{
       'v-header':header ,
     },
+    created(){
+      this.initData();
+    },
     methods: {
-      ...mapActions({ setUserInfo: 'setUserInfo' }),
+//      ...mapActions({ setUserInfo: 'setUserInfo' }),
       changeMenu (url) {
         this.$router.replace('/user/'+url)
       },
-
-      // 用户登录
-      _login() {
-        //window.location.href="/static/test.html";
-        if (!this.username || !this.password) {
-          _.alert('请填写完整')
-          return
-        }
-        let data = {
-          username: this.username,
-          password: this.password
-        }
-        this.$store.dispatch('setLoadingState', true)
-        api.Login(data)
-          .then(res => {
-            console.log(res)
-            if(res.success) {
-              // let userInfo = Object.assign()
-              this.$store.dispatch('setLoadingState', false)
-              this.setUserInfo(res.data)
-              this.$router.replace('/home')
+      initData () {
+        let param = {common : {
+            userid:localStorage.getItem("userid"),
+            username:localStorage.getItem("username"),
+            token:localStorage.getItem("token")
+        }} ;
+        api.getUserInfo(param).then(res => {
+            console.log(res);
+            if(res.code == 200) {
+                this.user=res.data;
             }
-          })
-          .catch(error => {
-            console.log(error)
+        }).catch(error => {
+            console.log(error);
+        })
+      },
+      saveUserInfo () {
+          let param=_.getCommonParam();
+          let paramData = Object.assign(this.user,param);
+          api.updateUserInfo(paramData). then (res => {
+              if(res.code==200){
+                  alert("修改成功");
+                  this.initData();
+              }
+          }).catch(error => {
+              console.log(error);
           })
       }
+//      // 用户登录
+//      _login() {
+//        //window.location.href="/static/test.html";
+//        if (!this.username || !this.password) {
+//          _.alert('请填写完整')
+//          return
+//        }
+//        let data = {
+//          username: this.username,
+//          password: this.password
+//        }
+//        this.$store.dispatch('setLoadingState', true)
+//        api.Login(data)
+//          .then(res => {
+//            console.log(res)
+//            if(res.success) {
+//              // let userInfo = Object.assign()
+//              this.$store.dispatch('setLoadingState', false)
+//              this.setUserInfo(res.data)
+//              this.$router.replace('/home')
+//            }
+//          })
+//          .catch(error => {
+//            console.log(error)
+//          })
+//      }
     }
   }
 </script>
+<style src="../assets/c/global.css" scoped ></style>
+<style src="../assets/c/change_mesg.css" scoped ></style>
 <style>
   @import "../assets/c/global.css";
   @import "../assets/c/change_mesg.css";

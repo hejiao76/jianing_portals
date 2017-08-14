@@ -18,8 +18,13 @@ import NotFound from '../pages/NotFound'
 import GZInfo from '../pages/GZ_info.vue'
 import GZInfoEdit from '../pages/GZ_info_edit.vue'
 import GZArticleList from '../pages/GZ_article_list.vue'
+import GZArticleAdd from '../pages/GZ_article_add.vue'
 import GZResetPwd from '../pages/GZ_reset_pwd.vue'
 import GZYuYueList from '../pages/GZ_yuyue_list.vue'
+import PGZArticleList from '../pages/P_GZ_article_list.vue'
+import PGZGZList from '../pages/P_GZ_gz_list.vue'
+import PGZCaiLiaoList from '../pages/P_GZ_jiancai_list.vue'
+import PGZThingsList from '../pages/P_GZ_things_list.vue'
 
 Vue.use(Router)
 
@@ -90,9 +95,30 @@ export default new Router({
       component:GZArticleList
     },
     {
+      path: '/user/gzArtAdd',
+      component:GZArticleAdd
+    },
+    {
       path: '/user/gzYuYue',
       component:GZYuYueList
     },
+    {
+      path: '/pgz_article',
+      component:PGZArticleList
+    },
+    {
+      path: '/pgz_gzlist',
+      component:PGZGZList
+    },
+    {
+      path: '/pgz_cailiaolist',
+      component:PGZCaiLiaoList
+    },
+    {
+      path: '/pgz_thingslist',
+      component:PGZThingsList
+    },
+
 		{
 			path: '/user/info',
 			component: UserInfo

@@ -1,1 +1,42 @@
-1111111111111
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./jianing_web/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<div id="pdiv">
+  <div id="cdiv">chidDIV11111111111</div>
+</div>
+<a id="at" href="http://www.baidu.com">aaaaaaaaaa</a>;
+<input id="tbutton" type="button" value="remove A click"/>
+<script>
+$("#tbutton").on("click",function(e){
+  $("#at").off("click");
+
+});
+$("#pdiv").on("click",function(e){
+  alert("pdiv")
+
+});
+$("#at").on("click",function(e){
+  alert("at")
+e.preventDefault();
+});
+
+$("#cdiv").on("click",function(e){
+  alert("cdiv");
+
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+</script>
+</body>
+</html>
+
+
+
+

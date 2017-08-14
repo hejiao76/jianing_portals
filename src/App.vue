@@ -97,72 +97,72 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import './assets/css/function';
+<!--<style lang="scss">-->
+<!--@import './assets/css/function';-->
 
-@font-face {
-  font-family: 'icon';  /* project id 172436 */
-  src: url('//at.alicdn.com/t/font_w71lovnj7adobt9.eot');
-  src: url('//at.alicdn.com/t/font_w71lovnj7adobt9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_w71lovnj7adobt9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_w71lovnj7adobt9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_w71lovnj7adobt9.svg#iconfont') format('svg');
-}
-.icon {
-    font-family:"icon" !important;
-    font-size:18px;
-    font-style:normal;
-    color: #ffffff;
-}
+<!--@font-face {-->
+  <!--font-family: 'icon';  /* project id 172436 */-->
+  <!--src: url('//at.alicdn.com/t/font_w71lovnj7adobt9.eot');-->
+  <!--src: url('//at.alicdn.com/t/font_w71lovnj7adobt9.eot?#iefix') format('embedded-opentype'),-->
+  <!--url('//at.alicdn.com/t/font_w71lovnj7adobt9.woff') format('woff'),-->
+  <!--url('//at.alicdn.com/t/font_w71lovnj7adobt9.ttf') format('truetype'),-->
+  <!--url('//at.alicdn.com/t/font_w71lovnj7adobt9.svg#iconfont') format('svg');-->
+<!--}-->
+<!--.icon {-->
+    <!--font-family:"icon" !important;-->
+    <!--font-size:18px;-->
+    <!--font-style:normal;-->
+    <!--color: #ffffff;-->
+<!--}-->
 
-html,body {
-  height: 100%;
-}
+<!--html,body {-->
+  <!--height: 100%;-->
+<!--}-->
 
-a.active {
-  text-decoration: none;
-}
+<!--a.active {-->
+  <!--text-decoration: none;-->
+<!--}-->
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-  background: #F5F5F5;
-  .content{
-    padding-top: px2rem(100px);
-    background: #F5F5F5;
-  }
-  .tabar {
-    margin-bottom: px2rem(120px);
-  }
-  //渐变动效
-  .slide-left-enter-active,
-  .slide-left-leave-active {
-    transition: all .1s ease-in;
-    opacity: 1;
-  }
-  .slide-left-enter,
-  .slide-left-leave-active {
-    opacity: 0;
-  }
+<!--#app {-->
+  <!--font-family: 'Avenir', Helvetica, Arial, sans-serif;-->
+  <!-- -webkit-font-smoothing: antialiased;-->
+  <!-- -moz-osx-font-smoothing: grayscale;-->
+  <!--height: 100%;-->
+  <!--background: #F5F5F5;-->
+  <!--.content{-->
+    <!--padding-top: px2rem(100px);-->
+    <!--background: #F5F5F5;-->
+  <!--}-->
+  <!--.tabar {-->
+    <!--margin-bottom: px2rem(120px);-->
+  <!--}-->
+  <!--//渐变动效-->
+  <!--.slide-left-enter-active,-->
+  <!--.slide-left-leave-active {-->
+    <!--transition: all .1s ease-in;-->
+    <!--opacity: 1;-->
+  <!--}-->
+  <!--.slide-left-enter,-->
+  <!--.slide-left-leave-active {-->
+    <!--opacity: 0;-->
+  <!--}-->
 
-  //左滑动效
-  // .slide-left-enter-active {
-  //   animation: slideLeft .3s;
-  // }
-}
+  <!--//左滑动效-->
+  <!--// .slide-left-enter-active {-->
+  <!--//   animation: slideLeft .3s;-->
+  <!--// }-->
+<!--}-->
 
-@keyframes slideLeft {
-  from {
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
+<!--@keyframes slideLeft {-->
+  <!--from {-->
+    <!--transform: translate3d(100%, 0, 0);-->
+    <!--visibility: visible;-->
+  <!--}-->
 
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
+  <!--to {-->
+    <!--transform: translate3d(0, 0, 0);-->
+  <!--}-->
+<!--}-->
 
 
-</style>
+<!--</style>-->

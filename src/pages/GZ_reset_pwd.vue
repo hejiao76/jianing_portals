@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
+    </div>
     <!--公用顶部end-->
     <div class="idecoration_list_details_box center_box">
       <div class="Breadcrumbs">
@@ -34,21 +36,21 @@
 										<span class="title_name">
 											旧密码:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="password" name="name" class="change_input" type="text"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											密码:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="password1" name="name" class="change_input" type="text"></label>
                 </div>
                 <div class="form_list">
 										<span class="title_name">
 											确认密码:
 										</span>
-                  <label><input name="name" class="change_input" type="text"></label>
+                  <label><input v-model="password2" name="name" class="change_input" type="text"></label>
                 </div>
-                <input value="修改密码" type="submit" class="btn"  />
+                <input v-on:click="updateUserPwd" value="修改密码" type="button" class="btn"  />
               </form>
 
             </div>
@@ -71,54 +73,48 @@
 <script>
   import { mapActions } from 'vuex'
   import api from '../fetch/api'
-  import * as _ from '../util/tool'
+  import * as _ from '../util/util'
   import header from "../components/header.vue"
+
 
   export default {
     data() {
       return {
-        username: '',
-        password: ''
+        password: '',
+        password1: '',
+        password2: ''
       }
     },
     components:{
       'v-header':header ,
     },
     methods: {
-      ...mapActions({ setUserInfo: 'setUserInfo' }),
+//      ...mapActions({ setUserInfo: 'setUserInfo' }),
       changeMenu (url) {
         this.$router.replace('/user/'+url)
       },
-      // 用户登录
-      _login() {
-        //window.location.href="/static/test.html";
-        if (!this.username || !this.password) {
-          _.alert('请填写完整')
-          return
+      updateUserPwd () {
+        let param = _.getCommonParam();
+        let paramData= {
+            password : this.password,
+            password1 : this.password1,
+            password2 : this.password2,
         }
-        let data = {
-          username: this.username,
-          password: this.password
-        }
-        this.$store.dispatch('setLoadingState', true)
-        api.Login(data)
-          .then(res => {
-            console.log(res)
-            if(res.success) {
-              // let userInfo = Object.assign()
-              this.$store.dispatch('setLoadingState', false)
-              this.setUserInfo(res.data)
-              this.$router.replace('/home')
+        param = Object.assign(param,paramData);
+        api.updateUserPwd(param).then (res => {
+            if(res.code == 200){
+                alert("修改成功");
             }
-          })
-          .catch(error => {
-            console.log(error)
-          })
+        }).catch(error =>{
+            console.log(error);
+        });
       }
     }
   }
 </script>
-<style>
-  @import "../assets/c/global.css";
-  @import "../assets/c/change_mesg.css";
-</style>
+<style src="../assets/c/global.css" scoped ></style>
+<style src="../assets/c/change_mesg.css" scoped ></style>
+<!--<style>-->
+  <!--@import "../assets/c/global.css";-->
+  <!--@import "../assets/c/change_mesg.css";-->
+<!--</style>-->

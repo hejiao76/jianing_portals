@@ -6,7 +6,7 @@ import * as _ from '../util/tool'
 // axios 配置
 axios.defaults.timeout = 5000;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-axios.defaults.baseURL = '/action';
+axios.defaults.baseURL ='http://zxapi.familyku.com/'; // '/action';
 
 //POST传参序列化
 axios.interceptors.request.use((config) => {
@@ -19,15 +19,15 @@ axios.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
-//返回状态判断
+//返回状态判断 返回状态拦截器
 axios.interceptors.response.use((res) =>{
-    if(!res.data.success){
+    if(!res.data.code){
         // _.toast(res.data.msg);
         return Promise.reject(res);
     }
     return res;
 }, (error) => {
-    _.toast("网络异常", 'fail');
+    console.log("网络异常", 'fail');
     return Promise.reject(error);
 });
 
@@ -37,9 +37,11 @@ export function fetch(url, params) {
             .then(response => {
                 resolve(response.data);
             }, err => {
+              debugger;
                 reject(err);
             })
             .catch((error) => {
+              debugger;
                reject(error)
             })
     })
@@ -138,5 +140,81 @@ export default {
      */
      getAddressJson() {
          return fetch('/api/address')
-     }
+     },
+
+    /**
+     * 获取工长信息
+     * @param param
+     * @returns {*}
+     */
+    getUserInfo (param) {
+         return fetch("/api/user/getUserInfo", param);
+     },
+    /**
+     *修改用户信息
+     * @param param
+     * @returns {*}
+     */
+    updateUserInfo (param) {
+      return fetch("/api/user/updateUserInfo", param);
+    },
+    /**
+     * 修改用户密码
+     * @param param
+     * @returns {*}
+     */
+    updateUserPwd (param) {
+      return fetch("/api/user/updateUserPwd", param);
+    },
+    /**
+     * 获取文章列表
+     * @param param
+     * @returns {*}
+     */
+    getArticleList (param) {
+      return fetch("/api/user/decorateCaseList", param);
+    },
+    /**
+     * 保存文章
+     * @param param
+     * @returns {*}
+     */
+    saveArticle (param) {
+      return fetch("/api/user/saveDecorateCase", param);
+    },
+    /**
+     * 前端装修案例列表
+     * @param param
+     * @returns {*}
+     */
+    decorateCaseList (param) {
+      return fetch("/api/decoratecase/decorateCaseList", param);
+    },
+    /**
+     * 前端工长列表
+     * @param param
+     * @returns {*}
+     */
+    foremanList (param) {
+      return fetch("/api/foreman/foremanList", param);
+    },
+    /**
+     * 前端材料列表
+     * @param param
+     * @returns {*}
+     */
+    decorateCaiLiaoList (param) {
+      return fetch("/api/decoratenew/decorateNewList", param);
+    },
+    /**
+     * 前端装修那点事列表
+     * @param param
+     * @returns {*}
+     */
+    decorateThingsList (param) {
+      return fetch("/api/decoratenew/decorateNewList", param);
+    }
+
+
+
 }

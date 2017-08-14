@@ -7,8 +7,11 @@
  * @param {String} str
  * @returns 格式化后的时间
  */
-export const util = {
-      valid () {
-
-      }
+export function getCommonParam () {
+  let param = {common : {
+    userid:localStorage.getItem("userid"),
+    username:localStorage.getItem("username"),
+    token:localStorage.getItem("token")
+  }} ;
+  return param;
 }

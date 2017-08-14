@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
+    </div>
     <div class="container foreman-info">
 
       <div class="row top-nav">首页&nbsp;&nbsp;&gt;&nbsp;&nbsp;<span>案例详情</span></div>

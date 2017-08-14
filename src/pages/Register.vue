@@ -1,6 +1,8 @@
 <template>
   <div class="global_box">
+    <div class="global_box_top">
     <v-header></v-header>
+    </div>
     <div class="register">
       <div class="register-wrop">
         <div class="redister-top">工长注册</div>
