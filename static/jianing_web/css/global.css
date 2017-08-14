@@ -195,8 +195,11 @@ body {
 .footer_box {
 
 }
-.global_box>.center_box { min-height: 400px;}
+.global_box>.center_box { min-height: 400px; overflow: hidden;}
 .herf_box { height: 39px; line-height: 39px; background: #e6e8e4;}
 .Breadcrumbs {font-size: 16px; margin: 25px 0 20px 0;}
 .Breadcrumbs>span {  margin: 0 10px;}
 .Breadcrumbs a.active { color: #57a126;}
+.foot_bottom {
+  height:160px; background: #57a126;}
+.code_img { margin-top:20px;}

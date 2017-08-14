@@ -1,6 +1,69 @@
-.foreman_mesg { overflow: hidden;}
+.foreman_mesg { overflow: hidden;    padding-bottom: 25px; }
 .foreman_head { width: 186px; height: 144px; float:left;}
 .foreman_mesg_right { float: right; height: 144px; width: 800px;}
 .bdsharebuttonbox { float: right;}
  .right_boxa{    height: 36px;
     line-height: 36px;}
+.right_boxa{ border-bottom: 1px solid #b0b0b0;}
+.right_boxa_ul { overflow: hidden; margin-bottom: 13px;}
+.right_boxa_ul li {
+  float: left;
+  margin-top: 12px;
+  width:300px;}
+.btn { margin: 0;
+  width:140px;
+line-height: 32px;
+height:32px;
+}
+
+.decoration_msg_title { font-size: 16px; text-align: center; margin: 25px auto 15px;}
+.decoration_msg_ul { font-size: 13px; color: #666666; text-align: center;}
+.decoration_msg_ul li { display: inline-block; margin-right: 30px;}
+.msg_center_box {
+  width:710px;
+  margin:0 auto;}
+.sp_title { text-align: left; font-size: 16px; margin: 22px 0 8px;}
+.msg_center_box .msg_img { width:100%;}
+.more_msg { margin: 25px 0 80px;}
+.decoration_msg { border: 1px solid #b0b0b0; margin-bottom: 100px; }
+
+
+/*建材css*/
+.jiancai_box,.new_box { margin-bottom: 100px;}
+.jiancai_left { width:765px; float: left;border: 1px solid #b0b0b0; line-height: 2.4;}
+.jiancai_right { width:155px;border: 1px solid #b0b0b0; padding: 20px 30px; min-height: 100px;
+  float: right;}
+#grade_box .iconfont:not(:last-child) { margin-right: 5px; }
+#grade_box .iconfont {color: #57a126;}
+.jiancai_msg_center { text-align: center;}
+.jiancai_msg_center img { width:250px;}
+.texing_list li:not(:first-child) { padding-left: 30px;}
+.jiancai_right li { margin-bottom: 10px;}
+.jiancai_right li a {  display: block;}
+.jiancai_right li a:hover {  color: #57a126;}
+.gongzhang_msg { padding: 20px 20px 40px 20px; line-height: 2; font-size: 12px;}
+.zx_title { font-size: 20px; border-bottom: 1px solid #b0b0b0; padding-bottom: 15px;}
+.gongzhang_box .decoration_msg { margin-bottom: 30px;}
+.jiancai_msg { padding: 0 90px 30px 30px; }
+
+
+.list_mesg_box { overflow: hidden; padding-bottom: 5px; margin-bottom: 100px;}
+.list_mesg_box .list_mesg{ width: 232px; margin-right: 24px; margin-top: 20px; cursor: pointer; position: relative; float: left;}
+.decoration_list .list_mesg_box .list_mesg:hover { box-shadow: 0px 2px 5px #999999;}
+.list_mesg_box .list_mesg:nth-child(4n) { margin-right: 0px;}
+.list_mesg_box .list_mesg .bc_img{ height: 189px; width: 100%;float: left;}
+.decoration_mesg_bottom { padding:5px 10px; font-size: 16px; line-height: 1.5; border: 1px solid #b0b0b0;}
+.decoration_mesg_bottom>div:nth-child(2) { width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.decoration_title_name>span { max-width:146px; float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.img_box { position: relative; overflow: hidden;}
+.list_mesg .foreman_name { position: absolute; width: 100%; left: 0; bottom: 0; height: 46px; line-height: 46px; color: #FFFFFF; text-align: center; background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important}
+.btn:hover { background: #4A7D28;}
+.foreman_list .btn { margin-top: 20px;}
+
+
+/*
+八卦详情*/
+.new_box .jiancai_left .jiancai_msg {
+  padding: 0 30px 30px 30px;
+}
+.new_box .jiancai_left .jiancai_msg>div { text-indent: 2em;}
