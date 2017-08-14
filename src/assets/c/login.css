@@ -19,5 +19,5 @@
     background: #CCCCCC;
     left: 38px;
     top: 7px;}
-.wangji_word { float: right; margin-top: 20px; color: #57a126; font-size: 16px; margin-bottom: 30px;}
-.btn { width: 100%; text-align:center; clear: both; outline: none; box-shadow: none;}
+.wangji_word { float: right; margin-top: 15px; color: #57a126; font-size: 16px; margin-bottom: 20px; clear: both;}
+.btn { width: 100%; text-align:center; clear: both; outline: none; box-shadow: none; margin: 0px auto !important; display: block !important;}
